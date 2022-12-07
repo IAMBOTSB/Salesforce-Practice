@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-grid slds-wrap">  
+        <!-- <lightning-layout horizontal-align={horizontalAlign} multiple-rows> -->
+            <!-- <lightning-layout-item size="12" padding="around-small" flexibility="auto" horizontal-align={horizontalAlign}> -->
+               <template for:each={cars.data} for:item="Car">
+                  <div class="slds-size_1-of-3" style="padding:10px;" key={Car.Id}>
+                  <lightning-card title = {Car.Select_Car__r.Name}>
+                    <div style="padding:10px">
+                   <lightning-formatted-rich-text size="20%" value={Car.Select_Car__r.Car_Image__c}></lightning-formatted-rich-text><br/>
+                    Car Model : {Car.Name} <br/>
+                    Car Color Type : {Car.Color_Type__c} <br/>
+                    Car Color : {Car.Colors__c} <br/> <br/>
+                    <lightning-button-group>
+                         <lightning-button label="View Car" id={Car.Id} onclick={ViewCar}></lightning-button>
+                         <lightning-button label="Create New Model" id={Car.Id} onclick={EditCar}></lightning-button>
+                         <lightning-button label="Book Car" id={Car.Id} onclick={BookCar}></lightning-button>
+                    </lightning-button-group>
+                </div>
+                  </lightning-card>
+                  </div>
+              </template>
+    <!-- </lightning-layout-item> -->
+    <!-- </lightning-layout> -->
+    </div>  
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <div style="padding:25px">
+            <lightning-record-form
+                   object-api-name={objectcustom}
+                   fields={fields}
+                   onsuccess={handleSubmit}
+             >                
+            </lightning-record-form>
+            <lightning-button label="Book Car" class="slds-align_absolute-center" onclick={handleBook}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
